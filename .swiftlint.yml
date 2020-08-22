@@ -1,4 +1,4 @@
-excluded: # paths to ignore during linting. Takes precedence over `included`.
+excluded:
 - Pods
 
 disabled_rules:
@@ -49,4 +49,10 @@ custom_rules:
         name: "Free Logging"
         regex: 'NSRegularExpression\(pattern:'
         message: "Use createAndLog() instead."
+        severity: warning
+        
+    hanging_error_block:
+        name: "Error Logging"
+        regex: 'onError: \{ \[weak self\] \_ in'
+        message: "Use Error.track() to log this error."
         severity: warning

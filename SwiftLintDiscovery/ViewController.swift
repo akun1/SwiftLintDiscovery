@@ -26,6 +26,12 @@ class ViewController: UIViewController {
         _ = try? (data! as NSData).decompressed(using: .lzfse)
         
         _ = try? NSRegularExpression(pattern: "", options: [])
+         
+        _ = """
+            }, onError: { [weak self] _ in
+                print("jello")
+            })
+        """
     }
 }
 

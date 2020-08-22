@@ -1,0 +1,8 @@
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+- Pods
+
+disabled_rules:
+- vertical_whitespace
+- trailing_newline
+- line_length
+- unused_optional_binding

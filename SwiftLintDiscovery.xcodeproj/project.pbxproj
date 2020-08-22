@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91311FF958BE327AC905C581 /* Pods_SwiftLintDiscovery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFDF16C481224E727CCB614 /* Pods_SwiftLintDiscovery.framework */; };
 		C09919DE24F0CA18002685EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09919DD24F0CA18002685EA /* AppDelegate.swift */; };
 		C09919E024F0CA18002685EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09919DF24F0CA18002685EA /* SceneDelegate.swift */; };
 		C09919E224F0CA18002685EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09919E124F0CA18002685EA /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55596015D373470DFB19C961 /* Pods-SwiftLintDiscovery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLintDiscovery.debug.xcconfig"; path = "Target Support Files/Pods-SwiftLintDiscovery/Pods-SwiftLintDiscovery.debug.xcconfig"; sourceTree = "<group>"; };
+		9489D79D930CB8BEB5EE18AB /* Pods-SwiftLintDiscovery.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftLintDiscovery.release.xcconfig"; path = "Target Support Files/Pods-SwiftLintDiscovery/Pods-SwiftLintDiscovery.release.xcconfig"; sourceTree = "<group>"; };
+		9EFDF16C481224E727CCB614 /* Pods_SwiftLintDiscovery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftLintDiscovery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09919DA24F0CA18002685EA /* SwiftLintDiscovery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftLintDiscovery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C09919DD24F0CA18002685EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C09919DF24F0CA18002685EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91311FF958BE327AC905C581 /* Pods_SwiftLintDiscovery.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49A4639D2D37C827AD70BD2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9EFDF16C481224E727CCB614 /* Pods_SwiftLintDiscovery.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A489D8C1A151607919E8FA73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				55596015D373470DFB19C961 /* Pods-SwiftLintDiscovery.debug.xcconfig */,
+				9489D79D930CB8BEB5EE18AB /* Pods-SwiftLintDiscovery.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C09919D124F0CA18002685EA = {
 			isa = PBXGroup;
 			children = (
 				C09919DC24F0CA18002685EA /* SwiftLintDiscovery */,
 				C09919DB24F0CA18002685EA /* Products */,
+				A489D8C1A151607919E8FA73 /* Pods */,
+				49A4639D2D37C827AD70BD2E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C09919EE24F0CA1A002685EA /* Build configuration list for PBXNativeTarget "SwiftLintDiscovery" */;
 			buildPhases = (
+				17AEC05EA3CA43C2C5B0FC0A /* [CP] Check Pods Manifest.lock */,
 				C09919D624F0CA18002685EA /* Sources */,
 				C09919D724F0CA18002685EA /* Frameworks */,
 				C09919D824F0CA18002685EA /* Resources */,
+				C09919F124F0CE96002685EA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17AEC05EA3CA43C2C5B0FC0A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SwiftLintDiscovery-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C09919F124F0CE96002685EA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C09919D624F0CA18002685EA /* Sources */ = {
@@ -282,6 +350,7 @@
 		};
 		C09919EF24F0CA1A002685EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55596015D373470DFB19C961 /* Pods-SwiftLintDiscovery.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +369,7 @@
 		};
 		C09919F024F0CA1A002685EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9489D79D930CB8BEB5EE18AB /* Pods-SwiftLintDiscovery.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

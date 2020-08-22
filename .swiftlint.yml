@@ -6,3 +6,14 @@ disabled_rules:
 - trailing_newline
 - line_length
 - unused_optional_binding
+- trailing_whitespace
+
+custom_rules:
+    smiley_face:
+        name: "Smiley Face"
+        regex: '(\:\))'
+        match_kinds:
+            - comment
+            - string
+        message: "A closing parenthesis smiley :) creates a half-hearted smile, and thus is not preferred. Use :]"
+        severity: warning

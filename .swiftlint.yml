@@ -9,11 +9,44 @@ disabled_rules:
 - trailing_whitespace
 
 custom_rules:
-    smiley_face:
-        name: "Smiley Face"
-        regex: '(\:\))'
-        match_kinds:
-            - comment
-            - string
-        message: "A closing parenthesis smiley :) creates a half-hearted smile, and thus is not preferred. Use :]"
+    logging_data:
+        name: "Free Logging"
+        regex: 'try\? Data\(contentsOf:'
+        message: "Use init?(contentsOf url: URL, logTag: String? = nil, additionalProperties: [String: Encodable] = [:]) instead."
+        severity: warning
+        
+    logging_decompress:
+        name: "Free Logging"
+        regex: '\.decompressed\(using:'
+        message: "Use decompressAndLog() instead."
+        severity: warning
+        
+    logging_decode:
+        name: "Free Logging"
+        regex: '\.decode\('
+        message: "Use decodeAndLog() instead."
+        severity: warning
+        
+    logging_json_data:
+        name: "Free Logging"
+        regex: '\.data\(withJSONObject:'
+        message: "Use dataAndLog() instead."
+        severity: warning
+            
+    logging_json_object:
+        name: "Free Logging"
+        regex: '\.jsonObject\(with:'
+        message: "Use jsonObjectAndLog() instead."
+        severity: warning
+    
+    logging_json_encode:
+        name: "Free Logging"
+        regex: '\.encode\('
+        message: "Use encodeAndLog() instead."
+        severity: warning
+
+    logging_regex:
+        name: "Free Logging"
+        regex: 'NSRegularExpression\(pattern:'
+        message: "Use createAndLog() instead."
         severity: warning

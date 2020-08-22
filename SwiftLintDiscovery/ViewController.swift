@@ -8,16 +8,24 @@
 
 import UIKit
 
+enum CharTypes {
+    case ninja
+    case pirate
+    case finja
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        let data = try? Data(contentsOf: URL(string: "ninja")!)
+        print(data as Any)
         
-        let smile = ":)"
-        print(smile)
+        _ = try? JSONDecoder().decode(String.self, from: data!)
+        
+        _ = try? (data! as NSData).decompressed(using: .lzfse)
+        
+        _ = try? NSRegularExpression(pattern: "", options: [])
     }
-
-
 }
 

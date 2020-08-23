@@ -32,6 +32,8 @@ class ViewController: UIViewController {
                 print("jello")
             })
         """
+        
+        _ = "Hello,  Stack Overflow"
     }
 }
 

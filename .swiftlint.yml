@@ -53,6 +53,6 @@ custom_rules:
         
     hanging_error_block:
         name: "Error Logging"
-        regex: 'onError: \{ \[weak self\] \_ in'
+        regex: '(?<=onError: \{).+\.track\(description:(?=\})'
         message: "Use Error.track() to log this error."
         severity: warning

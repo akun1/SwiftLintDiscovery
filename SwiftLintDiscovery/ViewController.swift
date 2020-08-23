@@ -25,12 +25,31 @@ class ViewController: UIViewController {
         
         _ = try? (data! as NSData).decompressed(using: .lzfse)
         
+        
+        
+        
+        
         _ = try? NSRegularExpression(pattern: "", options: [])
          
+        
+        _ = "onError: {rasdsaddsad  as das ad s da d asd.track(description:})"
+        
+        
         _ = """
             }, onError: { [weak self] _ in
                 print("jello")
             })
+        
+
+        }, onError: { [weak self] _ in
+            print("jello")
+        }) onError: { [weak self] _ in
+            print("jello")
+        })
+        
+        {
+        sss
+        }
         """
         
         _ = "Hello,  Stack Overflow"

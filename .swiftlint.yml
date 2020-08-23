@@ -53,6 +53,11 @@ custom_rules:
         
     hanging_error_block:
         name: "Error Logging"
-        regex: '(?<=onError: \{).+\.track\(description:(?=\})'
+        regex: '(onError: \{[\S\s]*?()\})'
         message: "Use Error.track() to log this error."
         severity: warning
+
+#(?<=onError: \{)^((?!badword).)*$
+#(?!.*?.track)(onError: \{[\S\s]*\.track\(description:[\S\s]*\)[\S\s]*\}\))
+#(?<=onError: \{)([\S\s]*\.track\(description:[\S\s]*)(?=\})
+#(?:onError: \{[\S\s]*?\})()
